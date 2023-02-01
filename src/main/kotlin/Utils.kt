@@ -5,7 +5,7 @@ import java.security.MessageDigest
 /**
  * Reads lines from the given input txt file.
  */
-fun readInput(name: String) = File("src", "$name.txt")
+fun readInput(name: String) = File("src", "main/resources/$name.txt")
     .readLines()
 
 /**
@@ -18,4 +18,4 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
 /**
  * The cleaner shorthand for printing output.
  */
-fun Any?.println() = println(this)
+fun Any?.print(prefix: String) = println("$prefix: ${this}")
